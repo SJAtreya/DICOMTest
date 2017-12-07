@@ -1,0 +1,45 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven {
+		url "http://www.dcm4che.org/maven2/"
+	}
+}
+
+
+dependencies {
+//	compile('org.springframework.boot:spring-boot-starter-web')
+	// https://mvnrepository.com/artifact/dcm4che/dcm4che
+	//compile group: 'org.dcm4che', name: 'dcm4che-all', version: '5.10.5'
+	compile('org.codehaus.groovy:groovy')
+	// https://mvnrepository.com/artifact/org.dcm4che.tool/dcm4che-tool-dcmqrscp
+	//compile group: 'org.dcm4che.tool', name: 'dcm4che-tool-dcmqrscp', version: 'dcm4chee-arc-light-5.10.5'
+	// https://mvnrepository.com/artifact/org.dcm4che.tool/dcm4che-tool-dcmqrscp
+	//compile group: 'org.dcm4che.tool', name: 'dcm4che-tool-dcmqrscp', version: '5.10.5'
+	// https://mvnrepository.com/artifact/org.dcm4che.dcm4chee-arc/dcm4chee-arc-wado
+	//compile group: 'org.dcm4che.dcm4chee-arc', name: 'dcm4chee-arc-wado', version: '5.0.1'
+	compile group: 'org.dcm4che', name: 'dcm4che-all', version: '3.3.8'
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	// https://mvnrepository.com/artifact/org.spockframework/spock-core
+	testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4'
+	
+	
+}
